@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Bus = test.Bussiness;
-using  test.Bussiness.Model;
+using test.Bussiness.Model;
 
 namespace test.Controllers
 {
@@ -14,9 +14,23 @@ namespace test.Controllers
         // POST api/values
         public Receitas PostDados(string nomeReceita)
         {
-            Receitas receitas =null;
+            Receitas receitas = null;
 
-           receitas=  Bus.Livro.GetReceita(nomeReceita);
+            receitas = Bus.Livro.GetReceita(nomeReceita);
+
+            return receitas;
+        }
+
+    }
+
+    public class TestController : ApiController
+    {
+        // POST api/values
+        public Receitas PostDados2(string nomeReceita)
+        {
+            Receitas receitas = null;
+
+            receitas = Bus.Livro.GetReceita(nomeReceita);
 
             return receitas;
         }
